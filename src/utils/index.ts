@@ -21,7 +21,7 @@ export const useMount = (callback: () => void) => {
   }, []);
 };
 
-export const useDebounce = <T>(value: T, delay?: number) => {
+export const useDebounce = <T>(value: T, delay?: number): T => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
     const timerId = setTimeout(() => setDebouncedValue(value), delay);
